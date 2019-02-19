@@ -13,16 +13,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   static const platform = const MethodChannel('samples.flutter.io/files');
-  String imgs = "";
+  List imgs;
 
 
   Future<void> _getImages() async {
-    String images;
+    List images;
     try {
-      final String result = await platform.invokeMethod('getImages');
+      final List result = await platform.invokeMethod('getImages');
       images = result;
+      print(images);
     } on PlatformException catch (e) {
-      images = "Something went wrong";
+      print("Error");
+//      images = "Something went wrong";
+
     }
 
     setState(() {
@@ -67,7 +70,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
 
-            Text(imgs),
+            Text("hi"),
           ],
         ),
       ),

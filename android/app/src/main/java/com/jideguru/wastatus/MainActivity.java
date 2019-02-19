@@ -28,9 +28,8 @@ public class MainActivity extends FlutterActivity {
       new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
               (call, result) -> {
                   if (call.method.equals("getImages")) {
-                      String[] imgs = getImages();
-
-                      if (imgs.length == 0) {
+                      String imgs = getImages();
+                      if (imgs == "") {
                           result.error("Empty", "No Images.", null);
                       } else {
                           result.success(imgs);                      }
@@ -42,18 +41,18 @@ public class MainActivity extends FlutterActivity {
   }
 
 
-    private String[] getImages(){
+    private String getImages(){
         String path1 = Environment.getExternalStorageDirectory().toString()+"/GBWhatsApp/Media/.Statuses";
         String path = Environment.getExternalStorageDirectory().toString()+"/Pictures/Twitter";
 
-        String imgs[];
+        String imgs;
         Log.d("Files", "Path: " + path);
         File directory = new File(path);
         String[] files = directory.list();
         Log.d("Files", "files: "+ files);
 
 
-        imgs = files;
+        imgs = files.toString();
 
         return imgs;
     }
