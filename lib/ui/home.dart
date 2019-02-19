@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
     if (images != null) {
       var lengthOfList = images.length;
       for (int i = 0; i < lengthOfList; i++) {
-        String img_src = "/storage/emulated/0/Pictures/Twitter/"+images[i];
+        String img_src = "/storage/emulated/0/GBWhatsApp/Media/.Statuses/"+images[i];
         String img_name = images[i];
         File img_file = new File(img_src);
         print(img_name);

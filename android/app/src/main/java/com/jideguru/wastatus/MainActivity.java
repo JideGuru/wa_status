@@ -37,8 +37,8 @@ public class MainActivity extends FlutterActivity {
 
 
     private List<String> getImages(){
-        String path1 = Environment.getExternalStorageDirectory().toString()+"/GBWhatsApp/Media/.Statuses";
-        String path = Environment.getExternalStorageDirectory().toString()+"/Pictures/Twitter";
+        String path = Environment.getExternalStorageDirectory().toString()+"/GBWhatsApp/Media/.Statuses";
+        String path1 = Environment.getExternalStorageDirectory().toString()+"/Pictures/Twitter";
 
         List<String> imgs = new ArrayList<String>();
         File directory = new File(path);
