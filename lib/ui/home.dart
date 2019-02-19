@@ -22,11 +22,8 @@ class _HomeState extends State<Home> {
       final List result = await platform.invokeMethod('getImages');
       String l;
       images = result;
-      print(images);
     } on PlatformException catch (e) {
       print("Error");
-//      images = "Something went wrong";
-
     }
 
     setState(() {
@@ -71,7 +68,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
 
-            Text("hi"),
+            Text(imgs[1]),
           ],
         ),
       ),

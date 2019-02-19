@@ -50,7 +50,7 @@ public class MainActivity extends FlutterActivity {
 
         List<String> imgs = new ArrayList<String>();
 //        String imgs;
-//        Log.d("Files", "Path: " + path);
+        Log.d("Files", "Path: " + path);
         File directory = new File(path);
         List<String> files = Arrays.asList(directory.list());
         Log.d("Files", "files: "+ files.toString());
