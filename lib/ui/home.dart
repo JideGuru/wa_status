@@ -53,17 +53,18 @@ class _HomeState extends State<Home> {
       for (int i = 0; i < lengthOfList; i++) {
         String img_src = "/storage/emulated/0/Pictures/Twitter/"+images[i];
         String img_name = images[i];
+        File img_file = new File(img_src);
         print(img_name);
         // Image URL
         // List item created with an image of the poster
-        var listItem = new GridTile(
-            footer: new GridTileBar(
+        var listItem = GridTile(
+            footer: GridTileBar(
               backgroundColor: Colors.black45,
-              title: new Text(img_name),
+              title: Text(img_name),
             ),
-            child: new GestureDetector(
+            child: GestureDetector(
               onTap: () {
-                var router = new MaterialPageRoute(
+                var router = MaterialPageRoute(
                     builder: (BuildContext context){
 //                      return Details(header: movie.title, img: imageURL, id: movie.id);
                     }
@@ -71,11 +72,13 @@ class _HomeState extends State<Home> {
 
                 Navigator.of(context).push(router);
               },
-              child: new FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: img_src,
-                fit: BoxFit.cover,
-              ),
+
+              child: Image.file(img_file),
+//              child: FadeInImage.(
+//                placeholder: "$kTransparentImage",
+//                image: img_src,
+//                fit: BoxFit.cover,
+//              ),
             ));
         listElementWidgetList.add(listItem);
       }
