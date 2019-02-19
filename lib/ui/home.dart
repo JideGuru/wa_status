@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
     List images;
     try {
       final List result = await platform.invokeMethod('getImages');
+      String l;
       images = result;
       print(images);
     } on PlatformException catch (e) {
